@@ -8,9 +8,10 @@
                 <div class="card-header">Update Category</div>
 
 
+
             <form action="{{url("update_category")}}" method="POST">
 
-                <input value='{{$users->id}}' type="text" name='id'>
+                <input hidden value='{{$users->id}}' type="text" name='id'>
 
                 @csrf
                     <div class="form-group">

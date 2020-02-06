@@ -14,6 +14,7 @@
                         </div>
                     @endif
 
+
                     Welcome...You are logged in!
                     <br>
                     <a href="{{url("manage_category")}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Manage Category</a>

@@ -8,6 +8,7 @@
                 <div class="card-header">Add Category</div>
 
 
+
             <form action="{{url("save_category")}}" method="POST">
 
                 @csrf

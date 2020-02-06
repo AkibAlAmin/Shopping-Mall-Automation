@@ -17,6 +17,7 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+
     /**
      * Show the application dashboard.
      *
@@ -53,6 +54,24 @@ class HomeController extends Controller
         return redirect('manage_category');
     }
 
+
+    public function DeleteCategory($id)
+    {
+        DB::table('floors_categories')->where('id', $id)->delete();
+
+        return redirect('manage_category');
+    }
+
+
+    public function GetUpdateCategory($id)
+    {
+        $users = DB::table('floors_categories')->where('id',$id)->first();
+//dd($users);
+
+        return view('view_update_category',compact('users'));
+    }
+
+
     public function UpdateCategory(Request $request)
     {
         $category = $request->input('floor_category');
@@ -66,35 +85,6 @@ class HomeController extends Controller
         DB::table('floors_categories')->where('id',$id)->update($data);
 
         return redirect('manage_category');
-    }
-
-
-
-
-    public function DeleteCategory($id)
-    {
-        DB::table('floors_categories')->where('id', $id)->delete();
-
-        return redirect('manage_category');
-    }
-
-    public function GetUpdateCategory($id)
-    {
-        // $category = $request->input('id');
-
-        // $data = array();
-
-        // $data['categori_name'] = $category;
-
-        // DB::table('floors_categories')->where('id',$id)->update($data);
-
-        // DB::table('floors_categories')->where('id',$id)->update($data);
-
-        $users = DB::table('floors_categories')->where('id',$id)->first();
-//dd($users);
-
-
-        return view('view_update_category',compact('users'));
     }
 
 }

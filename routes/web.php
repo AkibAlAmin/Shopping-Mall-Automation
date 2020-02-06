@@ -45,6 +45,14 @@ Route::get('view_update_category/{id}', 'HomeController@GetUpdateCategory');
 Route::post('update_category', 'HomeController@UpdateCategory');
 
 
+Route::get('manage_floor', 'FloorController@ManageFloor');
+Route::get('FloorAdd', 'FloorController@AddFloor');
+Route::post('save_floor', 'FloorController@SaveFloor');
+Route::get('delete_floor/{id}', 'FloorController@DeleteFloor');
+Route::get('view_update_floor/{id}', 'FloorController@GetUpdateFloor');
+Route::post('update_floor', 'FloorController@UpdateFloor');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
